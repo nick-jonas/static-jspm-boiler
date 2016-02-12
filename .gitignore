@@ -1,0 +1,19 @@
+node_modules
+jspm_packages
+appengine-generated/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+.npm
+
+# Compiled css
+app/css/
+
+# JSPM packages
+app/src/lib
+
+# Generated Build
+dist
