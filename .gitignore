@@ -10,7 +10,7 @@ npm-debug.log*
 .npm
 
 # Compiled css
-app/css/
+app/css/*/
 
 # JSPM packages
 app/src/lib
