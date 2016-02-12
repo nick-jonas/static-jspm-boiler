@@ -1,6 +1,6 @@
 # Static JSPM Boilerplate
 
-This is a jQuery-free boilerplate for static websites that use JSPM, ES6 (with ES5 babel transpiler), Stylus, NPM as a task runner, and deploy scripts for App Engine.  
+This is a boilerplate for static websites that use JSPM, ES6 (with ES5 babel transpiler), Stylus, NPM as a task runner, and deploy scripts for App Engine.  
 
 ## Install dependencies
 
