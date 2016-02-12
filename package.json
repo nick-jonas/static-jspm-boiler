@@ -1,8 +1,13 @@
 {
-  "name": "lingo-web",
+  "name": "static-jspm-boiler",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This is a jQuery-free boilerplate for static websites that use JSPM, ES6 (with ES5 babel transpiler), Stylus, NPM as a task runner, and deploy scripts for App Engine.",
+  "main": "dist/index.html",
+  "homepage": "https://github.com/nick-jonas/static-jspm-boiler",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nick-jonas/static-jspm-boiler.git"
+  },
   "scripts": {
     "remove-dist": "rm -rf ./dist",
     "copy-app-into-dist": "mkdir ./dist && cp -R ./app/** ./dist",
@@ -25,8 +30,20 @@
     "jspm": "^0.16.27",
     "stylus": "^0.53.0"
   },
-  "author": "Nick Jonas",
-  "license": "ISC",
+  "author": {
+    "name": "Nick Jonas",
+    "email": "njonas@google.com",
+    "url": "http://nickjonas.nyc"
+  },
+  "readmeFilename": "README.md",
+  "license": "Unlicense",
+  "keywords": [
+    "es6",
+    "jspm",
+    "boilerplate",
+    "babel",
+    "systemjs"
+  ],
   "jspm": {
     "directories": {
       "baseURL": "app",
@@ -42,6 +59,5 @@
       "babel-runtime": "npm:babel-runtime@^5.8.24",
       "core-js": "npm:core-js@^1.1.4"
     }
-  },
-  "dependencies": {}
+  }
 }
