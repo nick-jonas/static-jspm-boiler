@@ -17,3 +17,6 @@ app/src/lib
 
 # Generated Build
 dist
+
+app/src/main-bundle.js
+app/src/main-bundle.js.map
