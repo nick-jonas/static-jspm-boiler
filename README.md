@@ -63,8 +63,20 @@ This will both build and deploy your project to your App Engine instance.
 
 Browsers are catching on with all the syntactic sugar that jQuery offered.  [This guide](http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/) will help you make the leap.
 
-The lightweight [reqwest](https://github.com/ded/reqwest) library has been included for AJAX calls.
+The lightweight [reqwest](https://github.com/ded/reqwest) library has been included for AJAX calls.  You can use it by doing the following:
 
+```
+import reqwest from 'reqwest';
+
+reqwest({
+  url: 'https://www.googleapis.com/language/translate/v2?key=' + API_KEY + '&q=' + encodeURIComponent(body) + '&target=' + target,
+  method: 'get',
+  success: function(result){
+    onSuccess(result.data.translations[0].translatedText);
+  },
+  error: onError
+});
+```
 
 ### Installing packages for JSPM
 
