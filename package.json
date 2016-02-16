@@ -14,14 +14,11 @@
     "unbundle": "jspm unbundle && rm -f ./static/src/main-bundle.js && rm -f ./static/src/main-bundle.js.map",
     "bundle": "jspm bundle src/main.js static/src/main-bundle.js --inject",
     "browser-sync": "browser-sync start --files \"./static/css/*.css, ./templates/*\" --proxy localhost:6969 --port 5000",
-    
     "postinstall": "jspm install",
     "preserve": "npm run unbundle",
-
     "serve": "concurrent \"npm run watch-stylus\" \"dev_appserver.py --port=6969 .\" \"npm run browser-sync\"",
     "build": "npm run bundle && npm run build-stylus",
     "deploy": "appcfg.py update ."
-
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.9.1",

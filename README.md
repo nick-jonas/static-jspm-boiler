@@ -58,13 +58,11 @@ When building the files for production, a ```dist``` folder is created in the ro
 npm run build
 ```
 
-If you plan on deploying to App Engine, change ```your-project-id``` to your project ID in ```app.yaml```, and run:
+If you plan on deploying to App Engine, make sure to change ```your-project-id``` to your project ID in ```app.yaml```, and run:
 
 ```
 npm run deploy
 ```
-
-This will both build and deploy your project to your App Engine instance.
 
 
 
