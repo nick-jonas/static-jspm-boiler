@@ -52,7 +52,7 @@ npm run serve
 
 ## Building for Production
 
-When building the files for production, a ```dist``` folder is created in the root of your project directory:
+Building bundles up all the javascript using JSPM, and CSS using Stylus, with this command:
 
 ```
 npm run build
