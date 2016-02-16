@@ -8,19 +8,27 @@ This is a boilerplate for static websites that use JSPM, ES6 (with ES5 babel tra
 
 If you're planning on pushing to AppEngine, make sure you have this installed.  Download the [Google App Engine SDK for Python](https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python).  This will allow you to deploy your app directly to app engine.
 
-#### 2. Node & and global CLIs used
+#### 2. Python Requirements
+
+Install the Flask components needed by running:
+
+```
+pip install -r requirements.txt -t lib
+```
+
+#### 3. Node & and global CLIs used
 
 With Node.js installed, install these global modules which are used in the task runners:
 
 ```
 npm install -g stylus
 npm install -g jspm
-npm install -g jspm-server
 npm install -g concurrently
 npm install -g autoprefixer-stylus
+npm install -g browsersync
 ```
 
-#### 3. Local modules
+#### 4. Local modules
 
 Install the local node_modules with:
 
@@ -35,11 +43,12 @@ This allows for local development [ES6](https://github.com/DrkSephy/es6-cheatshe
 [chrome://flags/#enable-javascript-harmony](chrome://flags/#enable-javascript-harmony)
 
 
-Then to launch a local server:
+We use the local [AppEngine Python dev server](https://cloud.google.com/appengine/docs/python/tools/devserver) on port 6969, and proxy it via Browsersync to port 5000 for livereloading functionality.  Launch a local server by running:
 
 ```
 npm run serve
 ```
+
 
 ## Building for Production
 
@@ -49,7 +58,7 @@ When building the files for production, a ```dist``` folder is created in the ro
 npm run build
 ```
 
-If you plan on deploying to App Engine, change ```YOUR_PROJECT_ID``` to your project ID in ```app.yaml```, and run:
+If you plan on deploying to App Engine, change ```your-project-id``` to your project ID in ```app.yaml```, and run:
 
 ```
 npm run deploy

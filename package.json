@@ -9,19 +9,19 @@
     "url": "git+https://github.com/nick-jonas/static-jspm-boiler.git"
   },
   "scripts": {
-    "remove-dist": "rm -rf ./dist",
-    "copy-app-into-dist": "mkdir ./dist && cp -R ./app/** ./dist",
-    "watch-stylus": "stylus --watch ./stylus/main.styl --out ./app/css",
-    "build-stylus": "stylus -u autoprefixer-stylus stylus/main.styl --out dist/css --compress",
-    "unbundle": "jspm unbundle && rm ./app/src/main-bundle.js && rm ./app/src/main-bundle.js.map",
-    "bundle": "jspm bundle src/main.js app/src/main-bundle.js --inject",
-    "deploy-dist": "appcfg.py update .",
-    "serve": "npm run unbundle && concurrent \"npm run watch-stylus\" \"jspm-server --port=6969 ./app\"",
-    "serve-dist": "concurrent \"jspm-server --port=6969 ./dist\"",
-    "build": "npm run bundle && npm run remove-dist && npm run copy-app-into-dist && npm run build-stylus",
-    "deploy": "npm run build && npm run deploy-dist",
+    "watch-stylus": "stylus --watch ./stylus/main.styl --out ./static/css",
+    "build-stylus": "stylus -u autoprefixer-stylus stylus/main.styl --out static/css --compress",
+    "unbundle": "jspm unbundle && rm -f ./static/src/main-bundle.js && rm -f ./static/src/main-bundle.js.map",
+    "bundle": "jspm bundle src/main.js static/src/main-bundle.js --inject",
+    "browser-sync": "browser-sync start --files \"./static/css/*.css, ./templates/*\" --proxy localhost:6969 --port 5000",
+    
     "postinstall": "jspm install",
-    "postbuild": "npm run unbundle"
+    "preserve": "npm run unbundle",
+
+    "serve": "concurrent \"npm run watch-stylus\" \"dev_appserver.py --port=6969 .\" \"npm run browser-sync\"",
+    "build": "npm run bundle && npm run build-stylus",
+    "deploy": "appcfg.py update ."
+
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.9.1",
@@ -47,8 +47,8 @@
   ],
   "jspm": {
     "directories": {
-      "baseURL": "app",
-      "packages": "app/src/lib"
+      "baseURL": "static",
+      "packages": "static/src/lib"
     },
     "dependencies": {
       "babel-plugin-lodash": "npm:babel-plugin-lodash@^2.0.1",

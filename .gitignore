@@ -10,13 +10,16 @@ npm-debug.log*
 .npm
 
 # Compiled css
-app/css/*/
+static/css/*/
 
 # JSPM packages
-app/src/lib
+static/src/lib
+
+# Python packages
+lib
 
 # Generated Build
 dist
 
-app/src/main-bundle.js
-app/src/main-bundle.js.map
+static/src/main-bundle.js
+static/src/main-bundle.js.map

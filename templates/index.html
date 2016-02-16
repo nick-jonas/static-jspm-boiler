@@ -8,7 +8,13 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
   
   <!-- Stylus generated CSS -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+
+  {% if isDev %}
+    <!-- example of how things can be included for development-->
+  {% endif %}
+
 </head>
 
 <body>
@@ -20,10 +26,11 @@
     </div>
   </div>
 
-  <script src="src/lib/system.js"></script>
-  <script src="config.js"></script>
+
+  <script src="{{ url_for('static', filename='src/lib/system.js') }}"></script>
+  <script src="{{ url_for('static', filename='config.js') }}"></script>
   <script>
-    System.import('src/main.js');
+    System.import("{{ url_for('static', filename='src/main.js') }}");
   </script>
 
 </body>
